@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Albums</title>
+</head>
+<body>
+<h1>Albums</h1>
+<ul>
+    <li th:each="album:${albums}" th:object="${album}">
+        <a th:href="@{/albums/{id}(id=*{id})}" th:text="*{naam}"></a>
+        <span th:text="*{artiest.naam}"></span>
+    </li>
+</ul>
+</body>
+</html>
